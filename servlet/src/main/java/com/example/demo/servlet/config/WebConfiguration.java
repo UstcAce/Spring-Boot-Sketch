@@ -1,7 +1,6 @@
 package com.example.demo.servlet.config;
 
-import com.example.demo.servlet.interceptor.FirstIndexInterceptor;
-import com.example.demo.servlet.interceptor.SecondIndexInterceptor;
+import com.example.demo.servlet.interceptor.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -21,5 +20,20 @@ public class WebConfiguration implements WebMvcConfigurer {
         registry.addInterceptor(new FirstIndexInterceptor()).addPathPatterns("/index/**");
         registry.addInterceptor(new SecondIndexInterceptor()).addPathPatterns("/index/**");
         LOGGER.info("Register FirstIndexInterceptor and SecondIndexInterceptor onto InterceptorRegistry");
+
+
+        // LogInterceptor apply to all URLs.
+        registry.addInterceptor(new LogInterceptor());
+
+        // Old Login url, no longer use.
+        // Use OldURLInterceptor to redirect to a new URL.
+        registry.addInterceptor(new OldLoginInterceptor())//
+                .addPathPatterns("/admin/oldLogin");
+
+        // This interceptor apply to URL like /admin/*
+        // Exclude /admin/oldLogin
+        registry.addInterceptor(new AdminInterceptor())//
+                .addPathPatterns("/admin/*")//
+                .excludePathPatterns("/admin/oldLogin");
     }
 }
