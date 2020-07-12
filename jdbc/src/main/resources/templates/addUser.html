@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add user</title>
+</head>
+<body>
+    <form th:action="@{/user/addUser}" method="post">
+        <!--注意这里username不能写成 userName即使对应User属性名也是userName也不行-->
+        <input type="text" name="username"><br/>
+        <input type="text" name="usersex"><br/>
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>
