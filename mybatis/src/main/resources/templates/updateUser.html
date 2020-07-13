@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>updateUser user</title>
+</head>
+<body>
+    <form th:action="@{/user/updateUser}" method="post">
+        <input type="hidden" name="userid" th:value="${user.userid}">
+        <!--注意这里username不能写成 userName即使对应User属性名也是userName也不行-->
+        <input type="text" name="username" th:value="${user.username}"><br/>
+        <input type="text" name="usersex" th:value="${user.usersex}"><br/>
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>

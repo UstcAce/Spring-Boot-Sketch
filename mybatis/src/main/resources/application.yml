@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sketch?serverTimezone=GMT&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    data-username: root
+    data-password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+# 扫描classpath下mapper目录下的映射配置文件，针对mapper放在resources需要配置下面的配置项
+#mybatis:
+#  mapper-locations: classpath:/mapper/*.xml
+#  # 定义包别名，使用pojo时可以直接使用pojo类型名称不用加包名
+#  type-aliases-package: com.example.demo.mybatis.pojo
