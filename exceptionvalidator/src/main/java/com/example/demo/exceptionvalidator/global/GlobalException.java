@@ -1,10 +1,9 @@
 package com.example.demo.exceptionvalidator.global;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalException {
     @ExceptionHandler(value = {java.lang.NullPointerException.class})
     public ModelAndView nullPointExceptionHandler(Exception e) {
