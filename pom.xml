@@ -14,6 +14,17 @@
     <name>SketchS</name>
     <description>Sketch project for Spring Boot</description>
 
+    <modules>
+        <module>exceptionvalidator</module>
+        <module>jdbc</module>
+        <module>hibernate</module>
+        <module>mybatis</module>
+        <module>redis</module>
+        <module>resources</module>
+        <module>servlet</module>
+        <module>task</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
